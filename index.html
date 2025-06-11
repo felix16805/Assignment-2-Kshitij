@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sudoku Assignment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/128/10595/10595686.png" alt="Sudoku Icon" id="game-icon" />
+    <h1>Sudoku</h1>
+    <h4>Challenge your mind!</h4>
+  </header>
+
+  <section class="controls">
+    <select id="difficulty">
+      <option value="easy">Easy</option>
+      <option value="medium" selected>Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+    <button onclick="newGame()">New Game</button>
+    <button onclick="resetBoard()">Reset</button>
+    <button onclick="checkSolution()">Check</button>
+    <button onclick="getHint()">Hint</button>
+    <label><input type="checkbox" id="darkToggle" onchange="toggleDarkMode()" /> Dark Mode</label>
+  </section>
+
+  <div id="board"></div>
+
+  <section class="stats">
+    <p><strong>Timer:</strong> <span id="timer">00:00</span></p>
+    <p id="message"></p>
+    <div id="leaderboard">
+      <h3>Leaderboard (Fastest Times)</h3>
+      <ol id="leaderboard-list"></ol>
+    </div>
+  </section>
+
+  <!-- Reset Confirmation Modal -->
+  <div id="reset-modal" class="modal hidden">
+    <div class="modal-content">
+      <p>Are you sure you want to reset the board?</p>
+      <button onclick="confirmReset()">Yes</button>
+      <button onclick="closeModal()">No</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
